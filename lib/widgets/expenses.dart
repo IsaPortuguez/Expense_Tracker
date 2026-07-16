@@ -53,7 +53,8 @@ class _ExpensesState extends State<Expenses> {
     setState(() {
       _registerExpenses.remove(expense);
     }); //setState reload the screen after we add the new expense
-
+    
+    ScaffoldMessenger.of(context).clearSnackBars(); //Show the new message and inmediatly delete the last one.
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         persist: false,
