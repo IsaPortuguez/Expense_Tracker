@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:expense_tracker/models/expense.dart';
 import 'package:expense_tracker/widgets/expenses_list/expenses_list.dart';
 import 'package:expense_tracker/widgets/new_expense.dart';
+import 'package:expense_tracker/widgets/chart/chart.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -53,8 +54,10 @@ class _ExpensesState extends State<Expenses> {
     setState(() {
       _registerExpenses.remove(expense);
     }); //setState reload the screen after we add the new expense
-    
-    ScaffoldMessenger.of(context).clearSnackBars(); //Show the new message and inmediatly delete the last one.
+
+    ScaffoldMessenger.of(
+      context,
+    ).clearSnackBars(); //Show the new message and inmediatly delete the last one.
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         persist: false,
@@ -100,7 +103,7 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          const Text('The Chart'),
+          Chart(expenses: _registerExpenses),
           Expanded(
             child: mainContent,
           ),
