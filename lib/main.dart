@@ -26,9 +26,9 @@ void main() {
         ),
         textTheme: ThemeData().textTheme.copyWith(
           titleLarge: TextStyle(
-            fontWeight: FontWeight.normal,
+            fontWeight: FontWeight.bold,
             color: kColorScheme.onSecondaryContainer,
-            fontSize: 14,
+            fontSize: 16,
           ),
         ),
       ), // It is used to centralize the app's global styles.
