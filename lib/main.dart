@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter/services.dart';
+
 import 'package:expense_tracker/widgets/expenses.dart';
 
 var kColorScheme = ColorScheme.fromSeed(
@@ -12,6 +14,13 @@ var kDarkColorScheme = ColorScheme.fromSeed(
 );
 
 void main() {
+  // This line make sure that the app its OK
+  // WidgetsFlutterBinding.ensureInitialized();
+  // Block the screen and then, run the app.
+  // The screen is going to be vertical, always.
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  // ]).then((fn) {
   runApp(
     MaterialApp(
       darkTheme: ThemeData.dark().copyWith(
@@ -54,4 +63,5 @@ void main() {
       home: Expenses(),
     ),
   );
+  // });
 }
